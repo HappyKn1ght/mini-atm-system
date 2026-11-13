@@ -43,7 +43,7 @@ def main():
     print("===== ATM SYSTEM =====")
     while True:
         show_menu()
-        option = (input("Enter Your Option(1-4): "))
+        option = input("Enter Your Option(1-4): ")
 
         if option == '1':
             print_line()
