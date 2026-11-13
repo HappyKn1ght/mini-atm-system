@@ -21,7 +21,7 @@ A clean, beginner-friendly command-line ATM simulator built in Python. This proj
 ## 🚀 How to Run
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com
+   git clone https://github.com/HappyKn1ght/mini-atm-system.git
    ```
 2. **Navigate into the project folder:**
    ```bash
