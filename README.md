@@ -29,7 +29,7 @@ A clean, beginner-friendly command-line ATM simulator built in Python. This proj
    ```
 3. **Run the program:**
    ```bash
-   python main.py
+   python mini-atm-system.py
    ```
 
 ---
