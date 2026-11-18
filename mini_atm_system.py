@@ -9,26 +9,35 @@ def check_balance():
     print(f"Current Balance: ₹{current_balance:.2f}")
 
 def deposit():
+    
     global current_balance
-    deposit_cash = float(input("Enter an amount to be deposited: "))
-    if deposit_cash <= 0:
-        print(f"{RED}That's not a valid amount{RESET}")
-    else:
-        current_balance += deposit_cash
-        print(f"{GREEN}You deposited: ₹{deposit_cash:.2f}\nUpdated Balance: ₹{current_balance:.2f}{RESET}")
+    deposit_cash = input("Enter an amount to be deposited: ")
+    try:
+        deposit_cash = float(deposit_cash)
 
+        if deposit_cash <= 0:
+            print(f"{RED}That's not a valid amount{RESET}")
+        else:
+            current_balance += deposit_cash
+            print(f"{GREEN}You deposited: ₹{deposit_cash:.2f}\nUpdated Balance: ₹{current_balance:.2f}{RESET}")
+    except ValueError:
+        print(f"{RED}Invalid input! Please enter numbers only. Returning to main menu...{RESET}")
 
 def withdraw():
     global current_balance
-    withdraw_cash = float(input("Enter amount to be withdrawn: "))
-    if withdraw_cash > current_balance:
-        print(f"{RED}Insufficient balance!{RESET}")
-    elif withdraw_cash <= 0:
-        print("Amount must be greater than 0")
-    else:
-        current_balance -= withdraw_cash
-        print(f"{YELLOW}You withdrew: ₹{withdraw_cash:.2f}\nAvailable Balance: ₹{current_balance:.2f}{RESET}")
-
+    withdraw_cash = input("Enter amount to be withdrawn: ")
+    try:
+        withdraw_cash = float(withdraw_cash)
+        if withdraw_cash > current_balance:
+            print(f"{RED}Insufficient balance!{RESET}")
+        elif withdraw_cash <= 0:
+            print("Amount must be greater than 0")
+        else:
+            current_balance -= withdraw_cash
+            print(f"{YELLOW}You withdrew: ₹{withdraw_cash:.2f}\nAvailable Balance: ₹{current_balance:.2f}{RESET}")
+    except ValueError:
+        print(f"{RED}Invalid input! Please enter numbers only. Returning to main menu...{RESET}")
+    
 def show_menu():
     print(f'''{CYAN}Choose option:
     1. Check Balance
