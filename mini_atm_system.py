@@ -34,7 +34,7 @@ def withdraw():
         if withdraw_cash > current_balance:
             print(f"{RED}Insufficient balance!{RESET}")
         elif not math.isfinite(withdraw_cash) or withdraw_cash <= 0:
-            print("Amount must be greater than 0")
+            print(f"{RED}Amount must be greater than 0{RESET}")
         else:
             current_balance -= withdraw_cash
             print(f"{YELLOW}You withdrew: ₹{withdraw_cash:.2f}\nAvailable Balance: ₹{current_balance:.2f}{RESET}")
