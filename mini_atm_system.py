@@ -1,4 +1,7 @@
+import math
+
 current_balance = 0
+#color code
 GREEN = "\033[92m"
 RED = "\033[91m"
 YELLOW = "\033[93m"
@@ -15,7 +18,7 @@ def deposit():
     try:
         deposit_cash = float(deposit_cash)
 
-        if deposit_cash <= 0:
+        if not math.isfinite(deposit_cash) or deposit_cash <= 0:
             print(f"{RED}That's not a valid amount{RESET}")
         else:
             current_balance += deposit_cash
@@ -30,7 +33,7 @@ def withdraw():
         withdraw_cash = float(withdraw_cash)
         if withdraw_cash > current_balance:
             print(f"{RED}Insufficient balance!{RESET}")
-        elif withdraw_cash <= 0:
+        elif not math.isfinite(withdraw_cash) or withdraw_cash <= 0:
             print("Amount must be greater than 0")
         else:
             current_balance -= withdraw_cash
