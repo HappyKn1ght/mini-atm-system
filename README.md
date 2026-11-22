@@ -54,7 +54,7 @@ Updated Balance: ₹1000.00
 
 ## 🗺️ Roadmap (Future Upgrades)
 - [X] Add `try / except` and `math.isfinite()` handling for non-numeric inputs
-- [ ] 4-digit PIN authentication system
+- [X] 4-digit PIN authentication system
 - [ ] Transaction history log
 - [ ] Daily withdrawal limit check
 - [ ] Multi-user account support
