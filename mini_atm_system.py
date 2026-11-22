@@ -1,6 +1,7 @@
 import math
 
 current_balance = 0
+PIN = "3981"
 #color code
 GREEN = "\033[92m"
 RED = "\033[91m"
@@ -51,11 +52,38 @@ def show_menu():
 def print_line():
     print("-" * 40) 
 
+def verify_pin():
+    attempt = 3
+
+    while attempt > 0:
+        user_input = input("Enter Your PIN: ").strip()
+
+        if user_input == PIN:
+            print_line()
+            print(f"{GREEN}Correct PIN!{RESET}\nWelcome to our ATM")
+            print_line()
+            return True
+        else:
+            attempt -= 1
+            if attempt > 0:
+                print_line()
+                print(f"{RED}Incorrect PIN!\nYou have {attempt} {'attempt' if attempt == 1 else 'attempts'} left!{RESET}")
+                print_line()           
+            else:
+                print_line()
+                print(f"{RED}Incorrect PIN!\nToo many failed attempts. Your card has been locked.{RESET}")
+                print_line()
+                return False
+
+
 def main():
     print("===== ATM SYSTEM =====")
+    if not verify_pin():
+        print("Exiting ATM system...")
+        return
     while True:
         show_menu()
-        option = input("Enter Your Option(1-4): ")
+        option = input("Enter Your Option(1-4): ").strip()
 
         if option == '1':
             print_line()
