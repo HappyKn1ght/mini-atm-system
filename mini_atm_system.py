@@ -1,4 +1,5 @@
 import math
+import getpass
 
 current_balance = 0
 PIN = "3981"
@@ -56,7 +57,7 @@ def verify_pin():
     attempt = 3
 
     while attempt > 0:
-        user_input = input("Enter Your PIN: ").strip()
+        user_input = getpass.getpass("Enter Your PIN: ", echo_char="*").strip()
 
         if user_input == PIN:
             print_line()
